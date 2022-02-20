@@ -54,7 +54,7 @@ graph = [
 
 ```
 
-#### 3) BFS 알고리즘
+#### 3) BFS알고리즘
 
 ```
 from collections import deque
