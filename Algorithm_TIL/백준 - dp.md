@@ -23,3 +23,28 @@ for i in range(2, N+1):
 
 print(sum(dp[N]) % MOD)
 ```
+
+## 9096 : 1, 2, 3 더하기
+- 전형적인 DP문제. DP는 무조건 점화식 + 규칙 찾아서 DP 테이블 갱신하는 것이지만, 규칙성을 찾지 못했음. 연속된 세 항의 합이지만 n > 3 일때부터 적용되는 것이기 때문에 찾지 못했던 것 같다. 
+
+```
+# 보텀업 방식의 DP
+n = int(input())
+arr = []
+for i in range(n):
+  arr.append(int(input()))
+  
+# dp 테이블
+d = [0] * 11
+d[1] = 1
+d[2] = 2
+d[3] = 4
+
+# 점화식에 의한 계산
+for i in range(4, 11):
+  d[i] = d[i-1] + d[i-2] + d[i-3] 
+
+# 출력하는 부분
+for j in arr:
+  print(d[int(j)])
+```
